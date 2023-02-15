@@ -1,5 +1,3 @@
-// https://registry.npmjs.org/-/v1/search?text=react
-
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
@@ -9,8 +7,14 @@ interface RepositoriesState {
   data: string[];
 }
 
+const initialState: RepositoriesState = {
+  loading: false,
+  error: null,
+  data: [],
+};
+
 const reducer = (
-  state: RepositoriesState,
+  state: RepositoriesState = initialState,
   action: Action
 ): RepositoriesState => {
   switch (action.type) {
